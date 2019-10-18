@@ -1,3 +1,5 @@
+require pry 
+
 class Pokemon
   
   attr_accessor :id, :name, :type, :db 
@@ -15,6 +17,7 @@ class Pokemon
   
   def self.find(id, db)
     new_pokemon = db.execute("SELECT * FROM pokemon WHERE id = ?", [id])[0]
+    binding.pry 
     Pokemon.new(new_pokemon[0], new_pokemon[1], new_pokemon[2], db)
   end 
   
