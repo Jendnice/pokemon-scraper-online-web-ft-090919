@@ -10,7 +10,13 @@ class Pokemon
   end 
   
   def save 
-    
+    sql = <<-SQL
+      INSERT INTO pokemon (name, grade) 
+      VALUES (?, ?)
+    SQL
+
+    DB[:conn].execute(sql, self.name, self.grade)
+  end
   end 
   
 end
