@@ -13,13 +13,7 @@ class Pokemon
     db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
   end
   
-  # def save
-  #   sql = <<-SQL
-  #     INSERT INTO pokemon (name, grade) 
-  #     VALUES (?, ?)
-  #   SQL
+  def self.find
 
-  #   DB[:conn].execute(sql, self.name, self.grade)
-  # end
   
 end
